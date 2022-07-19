@@ -28,6 +28,10 @@ galleryDiv.addEventListener('click', openImage);
 
 function openImage(event) {
     event.preventDefault();
+    
+    if (event.target.nodeName !== 'IMG'){
+        return;
+    };
 
 const instance = basicLightbox.create(`
     <img src="${event.target.dataset.source}" width="800" height="600">`,
